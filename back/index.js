@@ -8,11 +8,17 @@ const mongoose = require('mongoose');
 const Category = require('./models/Category');
 const Product = require('./models/Product');
 
-mongoose.connect(`mongodb://${process.env.USRBD}:${process.env.USRPSS}@${process.env.DOMINIOBD}:${process.env.PORTBD}/${process.env.DATABASE}?authSource=admin`, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-}).then(() => console.log("Conectado ao BD com sucesso"));
+const connectWithRetry = () => {
+    return mongoose.connect(
+        `mongodb://${process.env.USRBD}:${process.env.USRPSS}@${process.env.DOMINIOBD}:${process.env.PORTBD}/${process.env.DATABASE}?authSource=admin`
+    ).catch((err) => {
+        console.error('Falha ao conectar ao BD:', err.message);
+        console.log('Tentando reconectar em 5 segundos...');
+        setTimeout(connectWithRetry, 5000);
+    });
+};
 
+connectWithRetry();
 
 
 app = express()

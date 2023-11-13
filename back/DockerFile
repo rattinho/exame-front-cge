@@ -1,0 +1,12 @@
+# Use a imagem oficial do Node.js com Alpine Linux
+FROM node:18.16.1-alpine
+
+WORKDIR /app
+
+COPY . /app
+
+RUN npm install
+
+CMD ["node", "index.js"]
+
+EXPOSE 1234
