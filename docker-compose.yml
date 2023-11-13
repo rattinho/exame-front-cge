@@ -1,0 +1,36 @@
+version: '3.1'
+services:
+  database-exame-front-cge:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: toor
+    expose:
+      - 27017
+    ports:
+      - 27017:27017
+    volumes:
+      - ./bd:/data/db
+  
+  back-end-api:
+    image: node:18.16.1-alpine
+    working_dir: /app
+    volumes:
+      - ./back:/app
+    command: ["node", "index.js"]
+    expose:
+      - 1234
+    ports:
+      - 1234:1234
+
+  front-end:
+    image: node:18.16.1-alpine
+    working_dir: /app
+    volumes:
+      - ./front:/app
+    command: >
+      npm start
+    expose:
+      - 8080
+    ports:
+      - 8080:8080

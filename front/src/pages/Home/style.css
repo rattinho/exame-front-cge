@@ -1,0 +1,107 @@
+.body {
+    display: flex;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+
+.body h1 {
+    margin: 20px;
+    color: gray;
+}
+
+.body span{
+    margin-top: 100px;
+    color: grey;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    border-collapse: separate;
+    border-radius: 10px;
+    padding: 0;
+}
+
+thead {
+    background-color: grey;
+    color: #ffffff;
+    padding: 15px;
+}
+
+
+thead th {
+    padding: 15px;
+}
+
+tbody td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ecf0f1;
+}
+
+tbody tr:nth-child(even):hover {
+    background-color: #f5f5f5;
+}
+
+.topMenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.topMenu select {
+    width: 20%;
+    padding: 10px;
+    text-align: center;
+    border: 0px;
+    border: solid 2px lightgray;
+    border-radius: 4px;
+    outline: none;
+}
+
+
+.topMenu div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.topMenu button {
+    padding: 10px;
+    text-align: center;
+    border: 0px;
+    border-radius: 4px;
+    outline: none;
+    background-color: lightgreen;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    font-weight: bold;
+    border: solid 2px lightgray;
+}
+
+.topMenu button:hover{
+    background-color: gray;
+    color: white;
+}
+
+.topMenu button + button{
+    background-color: lightyellow;
+}
