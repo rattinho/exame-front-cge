@@ -2,9 +2,8 @@ import { Link } from 'react-router-dom';
 import './style.css'
 
 const links = [
-    {Link: 'Instagram', URL: 'https://www.instagram.com.br'},
-    {Link: 'FaceBook', URL: 'https://www.instagram.com.br'},
-    {Link: 'GitHub', URL: 'https://www.instagram.com.br'},
+    {Link: 'Linkedin', URL: 'https://www.linkedin.com/in/felipe-guimar%C3%A3es-ratto-633274219/'},
+    {Link: 'GitHub', URL: 'https://github.com/rattinho'},
 ]
 
 function Navbar(){
